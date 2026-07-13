@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediConsult — Consult Certified Doctors Online, Anytime</title>
+<meta name="description" content="MediConsult connects you with licensed doctors for secure video consultations. Book an appointment in minutes and get care from home, 24/7.">
+<meta name="keywords" content="online doctor consultation, video consultation, telemedicine, book doctor appointment, online healthcare">
+<meta name="author" content="MediConsult">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="MediConsult — Consult Certified Doctors Online, Anytime">
+<meta property="og:description" content="Secure, affordable video consultations with licensed doctors. Book in minutes, meet online, get better.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MediConsult — Consult Certified Doctors Online, Anytime">
+<meta name="twitter:description" content="Secure, affordable video consultations with licensed doctors. Book in minutes, meet online, get better.">
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🩺</text></svg>">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<link rel="stylesheet" href="style.css">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalOrganization",
+  "name": "MediConsult",
+  "description": "Online doctor consultation platform connecting patients with licensed physicians via secure video calls.",
+  "url": "https://www.mediconsult.example",
+  "telephone": "+1-800-555-0199",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "221 Wellness Avenue, Suite 400",
+    "addressLocality": "Pune",
+    "addressRegion": "MH",
+    "postalCode": "411001",
+    "addressCountry": "IN"
+  },
+  "openingHours": "Mo-Su 00:00-23:59"
+}
+</script>
+</head>
+<body>
+
+<!-- ============ LOADING SCREEN ============ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__pulse">
+    <svg viewBox="0 0 150 40" class="loader__ekg">
+      <polyline points="0,20 30,20 38,5 46,35 54,20 150,20" />
+    </svg>
+  </div>
+</div>
+
+<!-- ============ SCROLL PROGRESS BAR ============ -->
+<div class="scroll-progress" id="scrollProgress" role="presentation"></div>
+
+<!-- ============ SKIP LINK ============ -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ============ HEADER / NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <div class="container navbar__inner">
+    <a href="#home" class="navbar__logo" aria-label="MediConsult home">
+      <span class="navbar__logo-icon"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i></span>
+      MediConsult
+    </a>
+
+    <nav class="navbar__nav" id="primaryNav" aria-label="Primary">
+      <ul class="navbar__list">
+        <li><a href="#home" class="navbar__link active-link">Home</a></li>
+        <li><a href="#services" class="navbar__link">Services</a></li>
+        <li><a href="#about" class="navbar__link">About</a></li>
+        <!-- <li><a href="#how-it-works" class="navbar__link">How It Works</a></li> -->
+        <li><a href="#consultation" class="navbar__link">Consultation</a></li>
+        <li><a href="#testimonials" class="navbar__link">Testimonials</a></li>
+        <li><a href="#faq" class="navbar__link">FAQ</a></li>
+        <li><a href="#contact" class="navbar__link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="navbar__actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+      </button>
+      <a href="#consultation" class="btn btn--primary navbar__cta">Book Appointment</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- ============ HERO SECTION ============ -->
+  <section class="hero" id="home">
+    <div class="hero__shapes" aria-hidden="true">
+      <span class="hero__blob hero__blob--1"></span>
+      <span class="hero__blob hero__blob--2"></span>
+      <svg class="hero__ekg" viewBox="0 0 600 80" preserveAspectRatio="none" aria-hidden="true">
+        <polyline points="0,40 120,40 145,10 170,70 195,40 600,40" />
+      </svg>
+    </div>
+
+    <div class="container hero__inner">
+      <div class="hero__content reveal">
+        <span class="badge badge--soft"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i> Trusted by 5,000+ patients</span>
+        <h1 class="hero__title">Consult Certified Doctors Online, <span class="text-gradient">Anytime</span></h1>
+        <p class="hero__subtitle">Skip the waiting room. Talk to licensed physicians over secure HD video, get a diagnosis, and receive your prescription — all from wherever you are.</p>
+        <div class="hero__cta-row">
+          <a href="#consultation" class="btn btn--primary btn--lg">
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Book Consultation
+          </a>
+          <a href="#how-it-works" class="btn btn--ghost btn--lg">Learn How It Works</a>
+        </div>
+
+        <div class="hero__stats">
+          <div class="stat">
+            <span class="stat__number" data-count="5000" data-suffix="+">0</span>
+            <span class="stat__label">Patients Treated</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number" data-count="100" data-suffix="+">0</span>
+            <span class="stat__label">Verified Doctors</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number" data-count="24" data-suffix="/7">0</span>
+            <span class="stat__label">Support Available</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number" data-count="98" data-suffix="%">0</span>
+            <span class="stat__label">Satisfaction Rate</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__media reveal reveal--delay-1">
+        <div class="hero__image-wrap">
+          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=760&q=80" alt="Doctor smiling, ready for an online video consultation" class="hero__image" loading="eager" width="560" height="640">
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRUST STRIP ============ -->
+  <div class="trust-strip">
+    <div class="container trust-strip__inner">
+      <span><i class="fa-solid fa-lock" aria-hidden="true"></i> End-to-end secure consultations</span>
+      <span><i class="fa-solid fa-user-doctor" aria-hidden="true"></i> Licensed &amp; verified physicians</span>
+      <span><i class="fa-solid fa-file-prescription" aria-hidden="true"></i> Digital prescriptions</span>
+      <span><i class="fa-solid fa-phone-volume" aria-hidden="true"></i> Emergency line: +1 (800) 555-0199</span>
+    </div>
+  </div>
+
+  <!-- ============ FEATURES SECTION ============ -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Why Choose Us</span>
+        <h2>Healthcare built around your time, not a waiting room</h2>
+        <p class="section-head__desc">Everything you need for a safe, fast, and affordable consultation — designed with your comfort in mind.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i></div>
+          <h3>Licensed Doctors</h3>
+          <p>Every physician on MediConsult is verified, board-certified, and experienced across 20+ specialties.</p>
+        </article>
+        <article class="feature-card reveal reveal--delay-1">
+          <div class="feature-card__icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
+          <h3>Secure Consultation</h3>
+          <p>End-to-end encrypted calls and records keep your health data private, always. HIPAA-style protection built in.</p>
+        </article>
+        <article class="feature-card reveal reveal--delay-2">
+          <div class="feature-card__icon"><i class="fa-solid fa-video" aria-hidden="true"></i></div>
+          <h3>HD Video Calls</h3>
+          <p>Crystal-clear, low-latency video so your consultation feels just like an in-person visit.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
+          <h3>Instant Booking</h3>
+          <p>Pick a slot, confirm details, and you're booked — no phone calls, no long forms, no delays.</p>
+        </article>
+        <article class="feature-card reveal reveal--delay-1">
+          <div class="feature-card__icon"><i class="fa-solid fa-tag" aria-hidden="true"></i></div>
+          <h3>Affordable Pricing</h3>
+          <p>Transparent, upfront pricing with no hidden fees — quality healthcare without the hospital bill.</p>
+        </article>
+        <article class="feature-card reveal reveal--delay-2">
+          <div class="feature-card__icon"><i class="fa-solid fa-headset" aria-hidden="true"></i></div>
+          <h3>24/7 Support</h3>
+          <p>Our care team is available around the clock for booking help, technical issues, or urgent questions.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT SECTION ============ -->
+  <section class="section section--tinted" id="about">
+    <div class="container about__inner">
+      <div class="about__media reveal">
+        <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=650&q=80" alt="Doctor reviewing patient records on a tablet" loading="lazy" width="560" height="600">
+        <div class="about__badge">
+          <i class="fa-solid fa-award" aria-hidden="true"></i>
+          <div><strong>10+ Years</strong><span>Combined clinical trust</span></div>
+        </div>
+      </div>
+
+      <div class="about__content reveal reveal--delay-1">
+        <span class="eyebrow">About MediConsult</span>
+        <h2>Our mission is simple: make quality care reachable</h2>
+        <p>MediConsult was built to close the gap between people and the doctors they need — no matter their location, schedule, or mobility. We believe healthcare should meet you where you are.</p>
+
+        <div class="about__pillars">
+          <div class="pillar">
+            <h4><i class="fa-solid fa-bullseye" aria-hidden="true"></i> Our Mission</h4>
+            <p>Deliver fast, affordable access to licensed doctors for everyday and ongoing health needs.</p>
+          </div>
+          <div class="pillar">
+            <h4><i class="fa-solid fa-eye" aria-hidden="true"></i> Our Vision</h4>
+            <p>A world where a consultation is never delayed by distance, traffic, or a full waiting room.</p>
+          </div>
+        </div>
+
+        <ul class="check-list">
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Verified, specialty-trained physicians</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Encrypted, confidential video visits</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Digital prescriptions sent within minutes</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Follow-up care included with every visit</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Simple Process</span>
+        <h2>Four steps to your consultation</h2>
+        <p class="section-head__desc">From booking to meeting your doctor, the whole process takes just a few minutes.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline__line" aria-hidden="true"></div>
+
+        <div class="timeline__step reveal">
+          <div class="timeline__marker">01</div>
+          <div class="timeline__card">
+            <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+            <h3>Choose a Date</h3>
+            <p>Browse open slots and pick a time that fits your day — mornings, evenings, or weekends.</p>
+          </div>
+        </div>
+
+        <div class="timeline__step reveal reveal--delay-1">
+          <div class="timeline__marker">02</div>
+          <div class="timeline__card">
+            <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+            <h3>Fill Your Details</h3>
+            <p>Tell us your name, contact info, and symptoms so your doctor can prepare in advance.</p>
+          </div>
+        </div>
+
+        <div class="timeline__step reveal reveal--delay-2">
+          <div class="timeline__marker">03</div>
+          <div class="timeline__card">
+            <i class="fa-solid fa-envelope-circle-check" aria-hidden="true"></i>
+            <h3>Receive Your Invite</h3>
+            <p>Get an instant confirmation email with your secure meeting link — no app download required.</p>
+          </div>
+        </div>
+
+        <div class="timeline__step reveal reveal--delay-3">
+          <div class="timeline__marker">04</div>
+          <div class="timeline__card">
+            <i class="fa-solid fa-video" aria-hidden="true"></i>
+            <h3>Meet Your Doctor</h3>
+            <p>Join the call at your scheduled time and get the care, guidance, or prescription you need.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES SECTION ============ -->
+  <section class="section section--tinted" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Our Specialties</span>
+        <h2>Consultations across every specialty you need</h2>
+        <p class="section-head__desc">Whether it's a routine check-in or a specific concern, there's a specialist ready to see you.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <article class="service-card reveal">
+          <div class="service-card__icon"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i></div>
+          <h3>General Physician</h3>
+          <p>Everyday illnesses, checkups, and ongoing health management.</p>
+          <a href="#consultation" class="service-card__link">Book now <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </article>
+        <article class="service-card reveal reveal--delay-1">
+          <div class="service-card__icon"><i class="fa-solid fa-hand-dots" aria-hidden="true"></i></div>
+          <h3>Dermatologist</h3>
+          <p>Skin, hair, and nail concerns diagnosed and treated with expert care.</p>
+          <a href="#consultation" class="service-card__link">Book now <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </article>
+        <article class="service-card reveal reveal--delay-2">
+          <div class="service-card__icon"><i class="fa-solid fa-baby" aria-hidden="true"></i></div>
+          <h3>Pediatrician</h3>
+          <p>Gentle, specialized care for infants, children, and teens.</p>
+          <a href="#consultation" class="service-card__link">Book now <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-card__icon"><i class="fa-solid fa-brain" aria-hidden="true"></i></div>
+          <h3>Psychologist</h3>
+          <p>Confidential support for stress, anxiety, and mental wellbeing.</p>
+          <a href="#consultation" class="service-card__link">Book now <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </article>
+        <article class="service-card reveal reveal--delay-1">
+          <div class="service-card__icon"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i></div>
+          <h3>Cardiologist</h3>
+          <p>Heart health assessments, monitoring, and preventive guidance.</p>
+          <a href="#consultation" class="service-card__link">Book now <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </article>
+        <article class="service-card reveal reveal--delay-2">
+          <div class="service-card__icon"><i class="fa-solid fa-apple-whole" aria-hidden="true"></i></div>
+          <h3>Nutritionist</h3>
+          <p>Personalized diet plans and guidance for lasting, healthy habits.</p>
+          <a href="#consultation" class="service-card__link">Book now <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOCTORS SECTION ============ -->
+  <section class="section" id="doctors">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Meet Our Team</span>
+        <h2>Doctors available to see you today</h2>
+        <p class="section-head__desc">A small sample of the licensed physicians ready for your consultation.</p>
+      </div>
+
+      <div class="grid grid--4">
+        <article class="doctor-card reveal">
+          <div class="doctor-card__image-wrap">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80" alt="Dr. Ayesha Khan, General Physician" loading="lazy" width="300" height="320">
+            <span class="doctor-card__badge">Available Today</span>
+          </div>
+          <div class="doctor-card__body">
+            <h3>Dr. Ayesha Khan</h3>
+            <span class="doctor-card__spec">General Physician</span>
+            <div class="doctor-card__meta">
+              <span><i class="fa-solid fa-briefcase-medical" aria-hidden="true"></i> 8 yrs exp.</span>
+              <span><i class="fa-solid fa-star" aria-hidden="true"></i> 4.9</span>
+            </div>
+            <a href="#consultation" class="btn btn--outline btn--full">Book</a>
+          </div>
+        </article>
+
+        <article class="doctor-card reveal reveal--delay-1">
+          <div class="doctor-card__image-wrap">
+            <img src="https://images.unsplash.com/photo-1622902046580-2b47f47f5471?w=400&q=80" alt="Dr. Rohan Mehta, Cardiologist" loading="lazy" width="300" height="320">
+            <span class="doctor-card__badge">Available Today</span>
+          </div>
+          <div class="doctor-card__body">
+            <h3>Dr. Rohan Mehta</h3>
+            <span class="doctor-card__spec">Cardiologist</span>
+            <div class="doctor-card__meta">
+              <span><i class="fa-solid fa-briefcase-medical" aria-hidden="true"></i> 12 yrs exp.</span>
+              <span><i class="fa-solid fa-star" aria-hidden="true"></i> 4.8</span>
+            </div>
+            <a href="#consultation" class="btn btn--outline btn--full">Book</a>
+          </div>
+        </article>
+
+        <article class="doctor-card reveal reveal--delay-2">
+          <div class="doctor-card__image-wrap">
+            <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=400&q=80" alt="Dr. Priya Nair, Dermatologist" loading="lazy" width="300" height="320">
+            <span class="doctor-card__badge doctor-card__badge--busy">Next: Tomorrow</span>
+          </div>
+          <div class="doctor-card__body">
+            <h3>Dr. Priya Nair</h3>
+            <span class="doctor-card__spec">Dermatologist</span>
+            <div class="doctor-card__meta">
+              <span><i class="fa-solid fa-briefcase-medical" aria-hidden="true"></i> 6 yrs exp.</span>
+              <span><i class="fa-solid fa-star" aria-hidden="true"></i> 4.9</span>
+            </div>
+            <a href="#consultation" class="btn btn--outline btn--full">Book</a>
+          </div>
+        </article>
+
+        <article class="doctor-card reveal reveal--delay-3">
+          <div class="doctor-card__image-wrap">
+            <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&q=80" alt="Dr. Karan Shah, Psychologist" loading="lazy" width="300" height="320">
+            <span class="doctor-card__badge">Available Today</span>
+          </div>
+          <div class="doctor-card__body">
+            <h3>Dr. Karan Shah</h3>
+            <span class="doctor-card__spec">Psychologist</span>
+            <div class="doctor-card__meta">
+              <span><i class="fa-solid fa-briefcase-medical" aria-hidden="true"></i> 9 yrs exp.</span>
+              <span><i class="fa-solid fa-star" aria-hidden="true"></i> 5.0</span>
+            </div>
+            <a href="#consultation" class="btn btn--outline btn--full">Book</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BOOK CONSULTATION SECTION ============ -->
+  <section class="section section--tinted" id="consultation">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Book Now</span>
+        <h2>Book Your Online Consultation</h2>
+        <p class="section-head__desc">Choose a date, choose a time, and fill in your details. Your doctor and you will both automatically receive the meeting invitation.</p>
+      </div>
+
+      <div class="cal-modal-container" role="document">
+  <!-- Cal inline embed code begins -->
+  <div id="my-cal-inline-test-30-min-meet"></div>
+
+  <script type="text/javascript">
+    (function (C, A, L) {
+      let p = function (a, ar) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal;
+        let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () { p(api, arguments); };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          if (typeof namespace === "string") {
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            p(cal.ns[namespace], ar);
+            p(cal, ["initNamespace", namespace]);
+          } else {
+            p(cal, ar);
+          }
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+
+    Cal("init", "test-30-min-meet", {
+      origin: "https://app.cal.com"
+    });
+
+    Cal.config = Cal.config || {};
+    Cal.config.forwardQueryParams = true;
+
+    Cal.ns["test-30-min-meet"]("inline", {
+      elementOrSelector: "#my-cal-inline-test-30-min-meet",
+      calLink: "vedant-wi51vj/test-30-min-meet",
+      config: {
+        layout: "month_view",
+        useSlotsViewOnSmallScreen: true,
+        theme: "light"
+      }
+    });
+
+    Cal.ns["test-30-min-meet"]("ui", {
+      theme: "light",
+
+      cssVarsPerTheme: {
+
+        light: {
+
+          /* Brand */
+          "cal-brand": "#2563EB",
+          "cal-brand-emphasis": "#1D4ED8",
+          "cal-brand-text": "#FFFFFF",
+          "cal-brand-subtle": "#DBEAFE",
+          "cal-brand-accent": "#06B6D4",
+
+          /* Text */
+          "cal-text": "#334155",
+          "cal-text-emphasis": "#1E293B",
+          "cal-text-subtle": "#64748B",
+          "cal-text-muted": "#94A3B8",
+
+          /* Background */
+          "cal-bg": "#FFFFFF",
+          "cal-bg-emphasis": "#F8FAFC",
+          "cal-bg-subtle": "#F1F5F9",
+          "cal-bg-muted": "#F8FAFC",
+
+          /* Borders */
+          "cal-border": "#E2E8F0",
+          "cal-border-emphasis": "#2563EB",
+          "cal-border-subtle": "#DBEAFE",
+          "cal-border-booker": "#DBEAFE",
+          "cal-border-booker-width": "1px",
+
+          /* Success */
+          "cal-success": "#10B981",
+
+          /* Radius */
+          "radius": "10px",
+          "radius-md": "16px",
+          "radius-lg": "24px"
+        },
+
+        dark: {
+
+          /* Keeping the same appearance */
+          "cal-brand": "#2563EB",
+          "cal-brand-emphasis": "#1D4ED8",
+          "cal-brand-text": "#FFFFFF",
+          "cal-brand-subtle": "#DBEAFE",
+          "cal-brand-accent": "#06B6D4",
+
+          "cal-text": "#334155",
+          "cal-text-emphasis": "#1E293B",
+          "cal-text-subtle": "#64748B",
+          "cal-text-muted": "#94A3B8",
+
+          "cal-bg": "#FFFFFF",
+          "cal-bg-emphasis": "#F8FAFC",
+          "cal-bg-subtle": "#F1F5F9",
+          "cal-bg-muted": "#F8FAFC",
+
+          "cal-border": "#E2E8F0",
+          "cal-border-emphasis": "#2563EB",
+          "cal-border-subtle": "#DBEAFE",
+          "cal-border-booker": "#DBEAFE",
+          "cal-border-booker-width": "1px",
+
+          "cal-success": "#10B981",
+
+          "radius": "10px",
+          "radius-md": "16px",
+          "radius-lg": "24px"
+        }
+
+      },
+
+      hideEventTypeDetails: true,
+      layout: "month_view"
+    });
+  </script>
+  <!-- Cal inline embed code ends -->
+</div>
+
+      <div class="how-cal-works reveal">
+        <h3><i class="fa-solid fa-circle-info" aria-hidden="true"></i> What happens after you book?</h3>
+        <p>Once you select your <strong>date</strong>, <strong>time</strong>, and add your <strong>name</strong>, <strong>email</strong>, <strong>phone</strong>, and <strong>symptoms</strong>, our booking system automatically:</p>
+        <ul class="check-list check-list--grid">
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Creates your meeting</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Sends your invitation</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Shares your meeting link</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Notifies your doctor</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Confirms via email to you</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Patient Stories</span>
+        <h2>What our patients say</h2>
+      </div>
+
+      <div class="testimonial-slider reveal" id="testimonialSlider">
+        <div class="testimonial-track" id="testimonialTrack">
+          <article class="testimonial-slide">
+            <div class="stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p>"I booked a consultation on my lunch break and was talking to a doctor within the hour. It saved me an entire afternoon off work."</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80" alt="" loading="lazy" width="48" height="48">
+              <div><strong>Meera Joshi</strong><span>Pune, India</span></div>
+            </div>
+          </article>
+
+          <article class="testimonial-slide">
+            <div class="stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p>"The video quality was excellent and my doctor was patient with all my questions. My prescription arrived by email before the call even ended."</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=100&q=80" alt="" loading="lazy" width="48" height="48">
+              <div><strong>Arjun Verma</strong><span>Mumbai, India</span></div>
+            </div>
+          </article>
+
+          <article class="testimonial-slide">
+            <div class="stars" aria-label="4.5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+            <p>"As a new parent, being able to consult a pediatrician at midnight without leaving the house was priceless."</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80" alt="" loading="lazy" width="48" height="48">
+              <div><strong>Sana Iqbal</strong><span>Bengaluru, India</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="testimonial-controls">
+          <button class="testimonial-btn" id="testimonialPrev" aria-label="Previous testimonial"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+          <div class="testimonial-dots" id="testimonialDots"></div>
+          <button class="testimonial-btn" id="testimonialNext" aria-label="Next testimonial"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ SECTION ============ -->
+  <section class="section section--tinted" id="faq">
+    <div class="container container--narrow">
+      <div class="section-head reveal">
+        <span class="eyebrow">Questions &amp; Answers</span>
+        <h2>Frequently asked questions</h2>
+      </div>
+
+      <div class="accordion reveal">
+        <div class="accordion__item">
+          <button class="accordion__trigger" aria-expanded="false">
+            Is my consultation secure and confidential?
+            <i class="fa-solid fa-chevron-down accordion__icon" aria-hidden="true"></i>
+          </button>
+          <div class="accordion__panel">
+            <p>Yes. All video consultations use end-to-end encryption, and your medical records are stored under strict, HIPAA-style privacy protocols. Only you and your doctor can access your session details.</p>
+          </div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__trigger" aria-expanded="false">
+            How do I receive my meeting link?
+            <i class="fa-solid fa-chevron-down accordion__icon" aria-hidden="true"></i>
+          </button>
+          <div class="accordion__panel">
+            <p>Right after you complete your booking, our system automatically emails a secure meeting link to both you and your assigned doctor — no extra steps needed.</p>
+          </div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__trigger" aria-expanded="false">
+            Can I reschedule my appointment?
+            <i class="fa-solid fa-chevron-down accordion__icon" aria-hidden="true"></i>
+          </button>
+          <div class="accordion__panel">
+            <p>Absolutely. Use the reschedule link included in your confirmation email to pick a new date and time up to 2 hours before your original slot, at no extra charge.</p>
+          </div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__trigger" aria-expanded="false">
+            What payment methods are accepted?
+            <i class="fa-solid fa-chevron-down accordion__icon" aria-hidden="true"></i>
+          </button>
+          <div class="accordion__panel">
+            <p>We accept all major credit and debit cards, UPI, and popular digital wallets. Payment is collected securely at the time of booking.</p>
+          </div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__trigger" aria-expanded="false">
+            Will I receive a prescription?
+            <i class="fa-solid fa-chevron-down accordion__icon" aria-hidden="true"></i>
+          </button>
+          <div class="accordion__panel">
+            <p>If your doctor determines medication is needed, a digital prescription is generated and emailed to you within minutes of your consultation ending.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT SECTION ============ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Get In Touch</span>
+        <h2>We're here to help</h2>
+        <p class="section-head__desc">Have a question before booking? Reach out and our care team will respond promptly.</p>
+      </div>
+
+      <div class="contact__grid">
+        <div class="contact__info reveal">
+          <div class="contact__item">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <div><strong>Clinic Address</strong><span>221 Wellness Avenue, Suite 400, Pune, MH 411001</span></div>
+          </div>
+          <div class="contact__item">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <div><strong>Email</strong><span>support@mediconsult.example</span></div>
+          </div>
+          <div class="contact__item">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <div><strong>Phone</strong><span>+1 (800) 555-0199</span></div>
+          </div>
+          <div class="contact__item">
+            <i class="fa-solid fa-clock" aria-hidden="true"></i>
+            <div><strong>Working Hours</strong><span>Open 24/7 — doctors on call every day</span></div>
+          </div>
+
+          <div class="contact__map" role="img" aria-label="Map placeholder showing clinic location">
+            <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+            <span>Map preview unavailable</span>
+          </div>
+        </div>
+
+        <form class="contact__form reveal reveal--delay-1" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="cf-name">Full Name</label>
+              <input type="text" id="cf-name" name="name" required autocomplete="name">
+            </div>
+            <div class="form-field">
+              <label for="cf-email">Email Address</label>
+              <input type="email" id="cf-email" name="email" required autocomplete="email">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="cf-subject">Subject</label>
+            <input type="text" id="cf-subject" name="subject" required>
+          </div>
+          <div class="form-field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Message
+          </button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section class="newsletter">
+    <div class="container newsletter__inner reveal">
+      <div>
+        <h2>Stay ahead of your health</h2>
+        <p>Get monthly wellness tips and updates from our doctors — no spam, unsubscribe anytime.</p>
+      </div>
+      <form class="newsletter__form" id="newsletterForm">
+        <label for="newsletterEmail" class="sr-only">Email address</label>
+        <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
+        <button type="submit" class="btn btn--accent">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a href="#home" class="navbar__logo footer__logo">
+        <span class="navbar__logo-icon"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i></span>
+        MediConsult
+      </a>
+      <p>Certified doctors, secure video visits, and digital prescriptions — healthcare that comes to you.</p>
+      <div class="footer__socials">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">General Physician</a></li>
+        <li><a href="#services">Dermatologist</a></li>
+        <li><a href="#services">Pediatrician</a></li>
+        <li><a href="#services">Psychologist</a></li>
+        <li><a href="#services">Cardiologist</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <p>&copy; <span id="year"></span> MediConsult. All rights reserved.</p>
+    <p class="footer__disclaimer">MediConsult is a telehealth platform and does not replace emergency medical services. In an emergency, call your local emergency number immediately.</p>
+  </div>
+</footer>
+
+<!-- ============ FLOATING BUTTONS ============ -->
+<a href="https://wa.me/18005550199" class="whatsapp-btn" aria-label="Chat with us on WhatsApp" target="_blank" rel="noopener">
+  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+</a>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+</button>
+
+<script src="script.js" defer></script>
+</body>
+</html>
